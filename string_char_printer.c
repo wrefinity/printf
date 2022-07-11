@@ -13,7 +13,7 @@ int print_string(va_list args)
 	str = (va_arg(args, char *));
 	if (str == 0)
 		str = "(null)";
-	for (int c = 0; str[c] != 0; c++)
+	for (c = 0; str[c] != 0; c++)
 		_putchar(str[c]);
 	return (c);
 }
@@ -25,9 +25,6 @@ int print_string(va_list args)
  */
 int print_char(va_list args)
 {
-	char c;
-
-	c = (va_arg(args, int));
-	_putchar(c);
+	_putchar(va_arg(args, int));
 	return (1);
 }
