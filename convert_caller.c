@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * func_unsig_int - convert a number to unsigned integer
+ * print_unsig_int - convert a number to unsigned integer
  * @args: arguments passed to func_unsig_int
  * Return: number of characters printed
  */

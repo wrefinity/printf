@@ -3,23 +3,21 @@
 
 void printer(char *name)
 {
-    int x;
+	int x;
 
-    for(x =0; name[x] != '\0'; x++)
-    {
-        if(name[x] >= 'a' && name[x] <='z')
-        name[x] = name[x] - 32;
-    }
+	for (x = 0; name[x] != '\0'; x++)
+	{
+		if (name[x] >= 'a' && name[x] <= 'z')
+		name[x] = name[x] - 32;
+	}
 
-
-    printf("%s", name);
+	printf("%s", name);
 }
 
-
-int main ()
+int main(void)
 {
-    char name[] = "Wrash Andrew";
+	char name[] = "Wrash Andrew";
 
-    printer(name);
-    return 0;
+	printer(name);
+	return (0);
 }

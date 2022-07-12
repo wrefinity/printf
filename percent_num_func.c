@@ -2,9 +2,9 @@
 
 
 /**
- * func_percent - print the percent
+ * print_percent - print the percent
  * @args: defines recieved by func_percent
- * Return: 1 
+ * Return: 1
  */
 int print_percent(__attribute__((unused)) va_list args)
 {
