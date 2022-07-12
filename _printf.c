@@ -1,16 +1,20 @@
 #include "main.h"
+
 /**
  * _printf - print a char or a string
- * @format: It's a character string
- * Return: the number of character the function is printing
+ * @format: defines character string
+ * Return: length of character printed
  */
 
 int _printf(const char *format, ...)
 {
 	int counter = 0;
-		if (format == NULL)
-		return (-1);
+	va_list args;
 
+	if (format == NULL)
+	{
+		return (-1);
+	}
 	p_fmt p_format[] = {
 		{"c", print_char},
 		{"s", print_string},
@@ -25,14 +29,9 @@ int _printf(const char *format, ...)
 		{"S", get_range_checker},
 		{"r", get_reverse_str},
 		{NULL, NULL},
-};
-
-	va_list args;
-
+	};
 	va_start(args, format);
-
 	counter = get_matcher(format, args, p_format);
-
 	va_end(args);
 	return (counter);
 }
