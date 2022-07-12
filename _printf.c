@@ -1,6 +1,9 @@
 #include "main.h"
-
-#include "main.h"
+/**
+ * _printf - print a char or a string
+ * @format: It's a character string
+ * Return: the number of character the function is printing
+ */
 
 int _printf(const char *format, ...)
 {
@@ -18,10 +21,10 @@ int _printf(const char *format, ...)
 };
 
 	va_list args;
-	va_start(args, format);
-	
-	tag = get_matcher(format, args, p_format);
 
+	va_start(args, format);
+
+	tag = get_matcher(format, args, p_format);
 	va_end(args);
 	return (tag);
 }
