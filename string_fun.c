@@ -5,15 +5,15 @@
  * @args: arguments passed to function
  * Return: length of character printed
  */
-int get_range_checker(va_list list)
+int get_range_checker(va_list args)
 {
 	int x, counter = 0;
-	char *data;
+	char *elements;
 
-	data = va_arg(list, char *);
-	for (x = 0; data[x] != '\0'; x++)
+	elements = va_arg(args, char *);
+	for (x = 0; elements[x] != '\0'; x++)
 	{
-		if ((data[x] > 0 && data[x] < 32) || data[x] >= 127)
+		if ((elements[x] > 0 && elements[x] < 32) || elements[x] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
@@ -23,7 +23,7 @@ int get_range_checker(va_list list)
 		}
 		else
 		{
-			_putchar(data[x]);
+			_putchar(elements[x]);
 			counter++;
 		}
 	}

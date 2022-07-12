@@ -5,26 +5,38 @@
  * Return: the number of character the function is printing
  */
 
+/**
+ * _printf - print a char or a string
+ * @format: defines character string
+ * Return: length of character printed
+ */
+
 int _printf(const char *format, ...)
 {
-	int tag = 0;
-		if (format == 0)
-		return (-1);
+  int counter = 0;
+  if (format == NULL)
+    return (-1);
 
-	p_fmt p_format[] = {
-		{"d", print_num},
-		{"i", print_num},
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{NULL, NULL},
-};
+  p_fmt p_format[] = {
+      {"c", print_char},
+      {"s", print_string},
+      {"d", print_num},
+      {"i", print_num},
+      {"%", print_percent},
+      {"b", get_binary_converter},
+      {"u", print_unsig_int},
+      {"o", get_octal_convert},
+      {"x", get_hex_lower_convert},
+      {"X", get_hex_upper_convert},
+      {"S", get_range_checker},
+      {"r", get_reverse_str},
+      {NULL, NULL},
+  };
 
-	va_list args;
+  va_list args;
+  va_start(args, format);
+  counter = get_matcher(format, args, p_format);
 
-	va_start(args, format);
-
-	tag = get_matcher(format, args, p_format);
-	va_end(args);
-	return (tag);
+  va_end(args);
+  return (counter);
 }
