@@ -75,7 +75,7 @@ int print_binary(va_list list, params_t *params)
 	if (params->hashtag_flag && num)
 		*--str = '0';
 	params->unsign = 1;
-    count  += print_number(str, params);
+	count  += print_number(str, params);
 	return (count);
 }
 
