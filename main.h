@@ -9,14 +9,14 @@
 
 /**
  * struct print_fmt - define the formatter
- * @sysmbol: defines the identifier
+ * @symbol: defines the identifier
  * @print: defines the optional function
  */
 
 struct print_fmt
 {
-    char *symbol;
-    int (*print)(va_list args);
+	char *symbol;
+	int (*print)(va_list args);
 };
 typedef struct print_fmt p_fmt;
 
