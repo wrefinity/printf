@@ -21,21 +21,21 @@ struct print_fmt
 };
 typedef struct print_fmt p_fmt;
 
-int _putchar(char c);
 int _printf(const char *format, ...);
-int get_matcher(const char *fmt, va_list args, p_fmt p_format[]);
-int convert_bin_oct_hex(unsigned int, int, int);
-int get_binary_converter(va_list);
-int get_octal_convert(va_list);
-int get_hex_lower_convert(va_list);
-int get_hex_upper_convert(va_list);
-int get_range_checker(va_list);
-int get_reverse_str(va_list);
-
-int print_unsig_int(va_list);
-int print_percent(va_list);
-int print_string(va_list);
-int print_char(va_list);
-int print_num(va_list);
+int _putchar(char c);
+int func_string(va_list);
+int func_char(va_list);
+int func_percent(va_list);
+int get_match_func(const char *, va_list, st_fmt st_format[]);
+int func_digit(va_list);
+int func_binary_convert(va_list);
+int func_octal_convert(va_list);
+int func_hex_Upcase_convert(va_list);
+int func_hex_Lowcase_convert(va_list);
+int binary_oct_hex_convert(unsigned int, int, int);
+int func_unsig_int(va_list list);
+int func_stringUppercase(va_list list);
+int func_revstr(va_list list);
+int func_rot13(va_list);
 
 #endif
