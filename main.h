@@ -7,10 +7,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-
 /**
  * struct print_fmt - define the formatter
- * @sys: defines the identifier
+ * @sysmbol: defines the identifier
  * @print: defines the optional function
  */
 
@@ -22,7 +21,6 @@ struct print_fmt
 typedef struct print_fmt p_fmt;
 
 int _putchar(char c);
-int _printf(const char *format, ...);
 int get_matcher(const char *fmt, va_list args, p_fmt p_format[]);
 int convert_bin_oct_hex(unsigned int, int, int);
 int get_binary_converter(va_list);
@@ -37,5 +35,6 @@ int print_percent(va_list);
 int print_string(va_list);
 int print_char(va_list);
 int print_num(va_list);
+int _printf(const char *format, ...);
 
 #endif
