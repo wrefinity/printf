@@ -19,8 +19,9 @@ int _printf(const char *format, ...)
 
 	va_list args;
 	va_start(args, format);
+	
 	tag = get_matcher(format, args, p_format);
 
 	va_end(args);
-	return tag;
+	return (tag);
 }
