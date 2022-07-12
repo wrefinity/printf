@@ -54,10 +54,11 @@ int print_unsig_int(va_list args)
  */
 int get_binary_converter(va_list args)
 {
-	int flag = 0, num = 0, base = 2;
+	int flag = 0, number_size = 0, num = 0, base = 2;
 
 	num = va_arg(args, unsigned int);
-	return (convert_bin_oct_hex(num, base, flag));
+	number_size = convert_bin_oct_hex(num, base, flag);
+	return (number_size);
 
 }
 
