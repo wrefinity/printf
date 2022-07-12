@@ -11,7 +11,7 @@ int print_string(va_list args)
 	char *str;
 
 	str = (va_arg(args, char *));
-	if (str == 0)
+	if (str == NULL)
 		str = "(null)";
 	for (c = 0; str[c] != 0; c++)
 		_putchar(str[c]);
