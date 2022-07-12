@@ -12,29 +12,28 @@ int get_matcher(const char *fmt, va_list args, p_fmt p_format[])
 {
 	int counter = 0, x, y, n = 0;
 
-		if (fmt == NULL)
+	if (fmt == NULL)
 		return (-1);
-
 	for (x = 0; fmt && fmt[x] != 0; x++)
 	{
 		if (fmt[x] != "%")
-	{
-		_putchar(fmt[x]);
-		counter++;
+		{
+			_putchar(fmt[x]);
+			counter += 1;
 		}
 		else
 		{
-	for (y = 0; p_format[y].symbol; y++)
-	{
-		if (p_format[y].symbol[0] == fmt[x + 1])
-		{
-			n = p_format[y].print(args);
-			counter += n;
-			x++;
-			break;
+			for (y = 0; p_format[y].symbol; y++)
+			{
+				if (p_format[y].symbol[0] == fmt[x + 1])
+				{
+					n = p_format[y].print(args);
+					counter += n;
+					x++;
+					break;
+				}
+			}
 		}
-
-	}
 		if (p_format[y].symbol == NULL && fmt[x + 1] != ' ')
 		{
 			if (fmt[x + 1] != 0)
@@ -48,6 +47,5 @@ int get_matcher(const char *fmt, va_list args, p_fmt p_format[])
 				return (-1);
 		}
 	}
-}
 	return (counter);
 }
