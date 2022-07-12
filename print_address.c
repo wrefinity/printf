@@ -59,7 +59,7 @@ int print_rot13(va_list list, params_t *params)
 	char arr[] =
 		"NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
 	char *arg = va_arg(list, char *);
-	
+
 	while (arg[i])
 	{
 		if ((arg[i] >= 'A' && arg[i] <= 'Z')
