@@ -79,5 +79,6 @@ int print_address(va_list ap, params_t *params)
 	str = convert(n, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
 	*--str = 'x';
 	*--str = '0';
+
 	return (print_number(str, params));
 }
