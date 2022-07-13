@@ -1,4 +1,4 @@
-.TH _PRINTF 3 " 12 JULY 2022"
+.TH _PRINTF 3 " 13 JULY 2022"
 
 .SH NAME
 .B _printf\fR \- formatted output conversion
